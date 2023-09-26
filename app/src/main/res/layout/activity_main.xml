@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <Button
+        android:id="@+id/button_browse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="58dp"
+        android:layout_marginTop="98dp"
+        android:layout_marginEnd="217dp"
+        android:layout_marginBottom="16dp"
+        android:text="select file"
+        app:cornerRadius="5dp"
+        app:icon="@drawable/files_foreground"
+        app:iconGravity="textStart"
+        app:layout_constraintBottom_toTopOf="@+id/tvFileName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvFileName"
+        android:layout_width="295dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="58dp"
+        android:layout_marginTop="162dp"
+        android:layout_marginEnd="58dp"
+        android:layout_marginBottom="32dp"
+        android:text="@string/file_path"
+        android:ems="10"
+        android:visibility="visible"
+        android:maxLines="2"
+        app:layout_constraintBottom_toTopOf="@+id/text_key"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/text_key"
+        android:layout_width="292dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="58dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginBottom="445dp"
+        android:ems="10"
+        android:hint="password"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/button_encrypt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="58dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginBottom="360dp"
+        android:text="Encrypt"
+        app:cornerRadius="5dp"
+        app:icon="@drawable/unlock_foreground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button_decrypt"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_key" />
+
+    <Button
+        android:id="@+id/button_decrypt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="58dp"
+        android:layout_marginBottom="360dp"
+        android:text="Decrypt"
+        app:cornerRadius="5dp"
+        app:icon="@drawable/lock_foreground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_key" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
