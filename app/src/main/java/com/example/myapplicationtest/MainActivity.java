@@ -196,22 +196,17 @@ public class MainActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         TextView fileName = findViewById(R.id.tvFileName);
         if (resultCode == Activity.RESULT_OK) {
-            switch (requestCode) {
-                case GALLERY_REQUEST_CODE:
-                    Uri selectedImage = data.getData();
-                    if (selectedImage != null) {
-                        RealPathUtil obj = new RealPathUtil();
-                        String selectedFilePath = obj.getRealPath(this, selectedImage);
-                        if (selectedFilePath != null) {
-                            fileName.setText(selectedFilePath);
-                            fileName.setVisibility(View.VISIBLE);
-                        } else {
-                            showToast("Failed to get the file path.");
-                        }
-                    } else {
-                        showToast("Selected file is null.");
-                    }
-                    break;
+            Uri selectedFile = data.getData();
+            if (selectedFile != null) {
+                RealPathUtil obj = new RealPathUtil();
+                String selectedFilePath = obj.getRealPath(this, selectedFile);
+                if (selectedFilePath != null) {
+                    fileName.setText(selectedFilePath);
+                } else {
+                    showToast("Failed to get the file path.");
+                }
+            } else {
+                showToast("Selected file is null.");
             }
             updateButtonStates();
         }
